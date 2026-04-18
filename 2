@@ -1,0 +1,65 @@
+// 多语言配置：key是统一标识，cn=中文，en=英文
+const lang = {
+    // 导航
+    navHome: { cn: "主页", en: "Home" },
+    navAbout: { cn: "关于", en: "About" },
+    navSkills: { cn: "技能", en: "Skills" },
+    navContact: { cn: "联系", en: "Contact" },
+
+    // 主页
+    homeTitle: { cn: "你好，我是<你的名字>", en: "Hello, I'm <Your Name>" },
+    homeSubtitle: { cn: "个人主页 / 前端爱好者 / 技术分享", en: "Personal Page / Front-end Lover / Tech Sharing" },
+
+    // 关于我
+    aboutTitle: { cn: "关于我", en: "About Me" },
+    aboutDesc: { 
+        cn: "一名热爱技术的开发者，专注于<你的方向，如：前端开发/Java/设计>，喜欢分享学习心得和项目经验。<br>擅长使用<你的技能>，熟悉GitHub Pages部署，持续学习新技术，追求高效优雅的代码。", 
+        en: "A tech-loving developer, focusing on <Your Field, e.g.: Front-end/Java/Design>, fond of sharing learning experience and project cases.<br>Proficient in <Your Skills>, familiar with GitHub Pages deployment, keep learning new technologies and pursue efficient and elegant code." 
+    },
+
+    // 技能
+    skillsTitle: { cn: "我的技能", en: "My Skills" },
+    skill1: { cn: "前端开发", en: "Front-end Development" },
+    skill1Desc: { cn: "HTML/CSS/JS、Bootstrap、Tailwind CSS", en: "HTML/CSS/JS, Bootstrap, Tailwind CSS" },
+    skill2: { cn: "Git/GitHub", en: "Git/GitHub" },
+    skill2Desc: { cn: "仓库管理、GitHub Pages部署、分支管理", en: "Repo Management, GitHub Pages Deployment, Branch Management" },
+    skill3: { cn: "静态站点", en: "Static Site" },
+    skill3Desc: { cn: "静态博客、个人简历、作品集搭建", en: "Static Blog, Personal Resume, Portfolio Building" },
+
+    // 联系我
+    contactTitle: { cn: "联系我", en: "Contact Me" },
+    contactEmail: { cn: "邮箱", en: "Email" },
+    contactGithub: { cn: "GitHub", en: "GitHub" },
+    contactBlog: { cn: "博客", en: "Blog" },
+
+    // 底部
+    footerText: { cn: "© 2025 <你的名字> 个人主页 | 基于GitHub Pages搭建", en: "© 2025 <Your Name> Personal Page | Built with GitHub Pages" }
+};
+
+// 获取页面元素
+const cnBtn = document.getElementById('cnBtn');
+const enBtn = document.getElementById('enBtn');
+const langElements = document.querySelectorAll('.lang');
+
+// 切换语言函数
+function setLanguage(langCode) {
+    langElements.forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (lang[key] && lang[key][langCode]) {
+            // 处理带HTML的内容（如aboutDesc的<br>）
+            el.innerHTML = lang[key][langCode];
+        }
+    });
+    // 切换按钮激活状态
+    cnBtn.classList.toggle('active', langCode === 'cn');
+    enBtn.classList.toggle('active', langCode === 'en');
+    // 修改页面语言属性
+    document.documentElement.lang = langCode === 'cn' ? 'zh-CN' : 'en';
+}
+
+// 初始加载中文
+window.onload = () => setLanguage('cn');
+
+// 绑定语言切换按钮事件
+cnBtn.addEventListener('click', () => setLanguage('cn'));
+enBtn.addEventListener('click', () => setLanguage('en'));
