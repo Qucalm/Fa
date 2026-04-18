@@ -1,0 +1,270 @@
+/* 全局样式：配色/字体/重置默认样式 */
+:root {
+    --primary-color: #2c3e50; /* 主色：深灰蓝（导航/标题） */
+    --secondary-color: #3498db; /* 辅色：浅蓝色（按钮/hover） */
+    --light-color: #ecf0f1; /* 浅色：背景 */
+    --dark-color: #34495e; /* 深色：文字 */
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 卡片阴影 */
+    --transition: all 0.3s ease; /* 通用过渡效果 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "思源黑体", "Microsoft YaHei", sans-serif; /* 适配中文字体 */
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+/* 通用容器：居中+限制宽度，适配不同屏幕 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 通用板块样式 */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 卡片通用样式：美化+阴影+圆角 */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 顶部导航 */
+.navbar {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 语言切换按钮 */
+.lang-switch {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.lang-btn.active {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.lang-btn:hover:not(.active) {
+    border-color: #fff;
+}
+
+/* 导航菜单 */
+.nav-menu {
+    display: flex;
+    gap: 25px;
+    font-size: 1.1rem;
+}
+
+.nav-menu a:hover {
+    color: var(--secondary-color);
+}
+
+/* 主页头部 */
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: -70px;
+}
+
+.home h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.home p {
+    font-size: 1.3rem;
+    color: var(--dark-color);
+    margin-bottom: 30px;
+}
+
+/* 头像样式：圆形+边框+阴影 */
+.avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: var(--card-shadow);
+}
+
+/* 关于我 */
+.about .card {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* 技能板块 */
+.skills-card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-card {
+    text-align: center;
+}
+
+.skill-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* 联系板块 */
+.contact-card-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    color: var(--primary-color);
+}
+
+.contact-icon {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* 底部版权 */
+.footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* 响应式：适配手机（768px以下） */
+@media (max-width: 768px) {
+    .section {
+        padding: 50px 0;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .home h1 {
+        font-size: 2.2rem;
+    }
+
+    .home p {
+        font-size: 1.1rem;
+    }
+
+    .avatar {
+        width: 140px;
+        height: 140px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        font-size: 1rem;
+    }
+}
