@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 页面标题，可改 -->
+    <title>My Personal Page</title>
+    <!-- 引入美化样式 -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- 引入字体图标（可选，自带主页/邮箱//github图标） -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 顶部导航：语言切换+导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- 语言切换按钮 -->
+            <div class="lang-switch">
+                <button id="cnBtn" class="lang-btn active">中文</button>
+                <button id="enBtn" class="lang-btn">English</button>
+            </div>
+            <!-- 导航菜单（响应式，手机端折叠） -->
+            <ul class="nav-menu">
+                <li><a href=" " class="lang" data-key="navHome"><i class="fas fa-home"></i></a ></li>
+                <li><a href="#about" class="lang" data-key="navAbout">关于</a ></li>
+                <li><a href="#skills" class="lang" data-key="navSkills">技能</a ></li>
+                <li><a href="#contact" class="lang" data-key="navContact">联系</a ></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 主页头部 -->
+    <section id="home" class="home section">
+        <div class="container">
+            <h1 class="lang" data-key="homeTitle">你好，我是XXX</h1>
+            <p class="lang" data-key="homeSubtitle">个人主页 / 前端爱好者 / 技术分享</p >
+            <!-- 替换成你的头像，放在img文件夹，改名字即可 -->
+            < img src="./img/avatar.png" alt="avatar" class="avatar">
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title lang" data-key="aboutTitle">关于我</h2>
+            <div class="card">
+                <p class="lang" data-key="aboutDesc">
+                    一名热爱技术的开发者，专注于前端开发/个人成长，喜欢分享学习心得和项目经验。<br>
+                    擅长使用HTML/CSS/JS搭建静态站点，熟悉GitHub Pages部署，持续学习新技术。
+                </p >
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能板块 -->
+    <section id="skills" class="skills section">
+        <div class="container">
+            <h2 class="section-title lang" data-key="skillsTitle">我的技能</h2>
+            <div class="skills-card-group">
+                <div class="card skill-card">
+                    <i class="fas fa-code skill-icon"></i>
+                    <h3 class="lang" data-key="skill1">前端开发</h3>
+                    <p class="lang" data-key="skill1Desc">HTML/CSS/JS、Bootstrap、Tailwind CSS</p >
+                </div>
+                <div class="card skill-card">
+                    <i class="fas fa-github skill-icon"></i>
+                    <h3 class="lang" data-key="skill2">Git/GitHub</h3>
+                    <p class="lang" data-key="skill2Desc">仓库管理、GitHub Pages部署、分支管理</p >
+                </div>
+                <div class="card skill-card">
+                    <i class="fas fa-pen-nib skill-icon"></i>
+                    <h3 class="lang" data-key="skill3">静态站点</h3>
+                    <p class="lang" data-key="skill3Desc">静态博客、个人简历、作品集搭建</p >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title lang" data-key="contactTitle">联系我</h2>
+            <div class="contact-card-group">
+                <a href="mailto:你的邮箱@xxx.com" class="card contact-card">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <p class="lang" data-key="contactEmail">邮箱</p >
+                </a >
+                <a href="https://github.com/你的GitHub用户名" target="_blank" class="card contact-card">
+                    <i class="fab fa-github contact-icon"></i>
+                    <p class="lang" data-key="contactGithub">GitHub</p >
+                </a >
+                <a href="https://blog.csdn.net/你的博客名" target="_blank" class="card contact-card">
+                    <i class="fas fa-blog contact-icon"></i>
+                    <p class="lang" data-key="contactBlog">博客</p >
+                </a >
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部版权 -->
+    <footer class="footer">
+        <div class="container">
+            <p class="lang" data-key="footerText">© 2025 我的个人主页 | 基于GitHub Pages搭建</p >
+        </div>
+    </footer>
+
+    <!-- 引入多语言切换脚本 -->
+    <script src="./js/lang.js"></script>
+</body>
+</html>
